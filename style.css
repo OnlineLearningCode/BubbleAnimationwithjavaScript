@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh; 
+  background-color:black;
+}
+
+span {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  position: absolute;
+  pointer-events: none;
+  background:transparent  ;
+  box-shadow:  20px 20px 60px #489dcf, 
+             -20px -20px 60px #62d5ff,
+              inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+
+             ;
+  transform: translate(-50%, -50%);
+  animation: blow 5s linear infinite;
+}
+
+
+span:after{
+  content: '';
+  background:radial-gradient(ellipse at center , rgba(255,255,255,0.5) 0% ,rgba(255,255,255,0) 70% );
+}
+
+@keyframes blow {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(100deg);
+  }
+  100% {
+    transform: translate(-50%, -1000%);
+    opacity: 0;
+    filter: hue-rotate(1720deg);
+  }
+}
